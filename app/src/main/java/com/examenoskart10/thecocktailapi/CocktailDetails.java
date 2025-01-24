@@ -26,7 +26,7 @@ public class CocktailDetails {
             if (detail.strIngredient2 != null) ingredients.add(detail.strIngredient2);
             if (detail.strIngredient3 != null) ingredients.add(detail.strIngredient3);
             if (detail.strIngredient4 != null) ingredients.add(detail.strIngredient4);
-            // Agregar más ingredientes según sea necesario
+
             return String.join(", ", ingredients);
         }
         return "No hay ingredientes disponibles";
@@ -51,7 +51,7 @@ public class CocktailDetails {
         @SerializedName("strIngredient4")
         public String strIngredient4;
 
-        // Agregar más campos para ingredientes y medidas según la API
+
     }
 }
 

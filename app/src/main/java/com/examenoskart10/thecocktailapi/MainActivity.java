@@ -27,17 +27,13 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        // Inicializar vistas
         searchInput = findViewById(R.id.search_input);
         recyclerView = findViewById(R.id.recycler_view);
 
-        // Configurar RecyclerView con un GridLayoutManager
         recyclerView.setLayoutManager(new GridLayoutManager(this, 2));
 
-        // Obtener resultados iniciales (opcional, por ejemplo, con "Gin")
         fetchCocktails("Gin");
 
-        // Acción para realizar la búsqueda (puedes asignarla a un botón si lo necesitas)
         searchInput.setOnEditorActionListener((v, actionId, event) -> {
             String ingredient = searchInput.getText().toString().trim();
             if (!ingredient.isEmpty()) {
@@ -49,9 +45,7 @@ public class MainActivity extends AppCompatActivity {
         });
     }
 
-    /**
-     * Realiza la llamada a la API para obtener los cócteles por ingrediente.
-     */
+
     private void fetchCocktails(String ingredient) {
         com.examenoskart10.thecocktailapi.ApiInterface apiInterface = com.examenoskart10.thecocktailapi.ApiClient.getClient().create(com.examenoskart10.thecocktailapi.ApiInterface.class);
         Call<com.examenoskart10.thecocktailapi.Drinks> call = apiInterface.getDrinksByLicour(ingredient);
@@ -83,9 +77,6 @@ public class MainActivity extends AppCompatActivity {
         });
     }
 
-    /**
-     * Muestra los detalles del cóctel en un AlertDialog.
-     */
     private void showCocktailDetails(Drinks.Coctail cocktail) {
         ApiInterface apiInterface = ApiClient.getClient().create(ApiInterface.class);
         Call<CocktailDetails> call = apiInterface.getCocktailDetailsById(cocktail.coctailId);

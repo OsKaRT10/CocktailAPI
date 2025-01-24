@@ -14,7 +14,6 @@
         android:orientation="vertical"
         android:padding="8dp">
 
-        <!-- Imagen del cóctel -->
         <ImageView
             android:id="@+id/cocktail_image"
             android:layout_width="match_parent"
@@ -22,7 +21,6 @@
             android:scaleType="centerCrop"
             android:contentDescription="@string/cocktail_image" />
 
-        <!-- Nombre del cóctel -->
         <TextView
             android:id="@+id/cocktail_name"
             android:layout_width="match_parent"
