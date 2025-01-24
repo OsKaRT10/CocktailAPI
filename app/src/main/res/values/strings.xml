@@ -1,0 +1,4 @@
+<resources>
+    <string name="app_name">TheCocktailAPI</string>
+    <string name="cocktail_image">Imagen del cóctel</string>
+</resources>
